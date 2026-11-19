@@ -5,7 +5,7 @@
 **Docente:** Ana Carla do Nascimento Santos
 **Aluno:** Carlos Danilo Medeiros Cavalcante
 
-Projeto com quatro entregas semanais. Cada pasta tem o código, um README próprio e as evidências de execução. A documentação técnica em PDF (formato ABNT) de cada entrega está na pasta `docs/`.
+Projeto com quatro entregas semanais. Cada pasta tem o código, um README próprio e as evidências de execução.
 
 | Entrega | Tema | Pasta | Status |
 |---|---|---|---|
@@ -24,6 +24,3 @@ pip install -r requirements.txt
 cd entrega1-criptografia && python demo.py && cd ..
 cd entrega2-hash-autenticacao && python demo2.py && python -m unittest -v testes
 ```
-
-## Aviso
-Todos os testes usam dados fictícios, em máquina própria. Nenhuma chave ou senha real está neste repositório.
