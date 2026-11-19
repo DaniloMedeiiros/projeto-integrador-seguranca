@@ -1,0 +1,14 @@
+test_banco_nao_guarda_senha_em_texto_puro (testes.TestAuth.test_banco_nao_guarda_senha_em_texto_puro) ... ok
+test_cadastro_e_login_correto (testes.TestAuth.test_cadastro_e_login_correto) ... ok
+test_hash_adulterado_nao_confere (testes.TestAuth.test_hash_adulterado_nao_confere) ... ok
+test_login_senha_incorreta (testes.TestAuth.test_login_senha_incorreta) ... ok
+test_login_usuario_inexistente (testes.TestAuth.test_login_usuario_inexistente) ... ok
+test_mesma_senha_gera_hashes_diferentes (testes.TestAuth.test_mesma_senha_gera_hashes_diferentes) ... ok
+test_senha_curta_rejeitada (testes.TestAuth.test_senha_curta_rejeitada) ... ok
+test_sql_injection_nao_funciona (testes.TestAuth.test_sql_injection_nao_funciona) ... ok
+test_usuario_duplicado_rejeitado (testes.TestAuth.test_usuario_duplicado_rejeitado) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 4.323s
+
+OK

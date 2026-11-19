@@ -1,0 +1,22 @@
+=== 1. Geracao de chaves ===
+Par RSA-3072 (destinatario) e par Ed25519 (remetente) gerados em ./chaves
+
+=== 2. Cifragem hibrida (sigilo) ===
+Mensagem original : Pedido 4821: transferir R$ 100,00 para a conta de teste.
+Conteudo cifrado  : W/lKDmI/nvoPQC872OcLriobIAjLqnTdsNwxLV+Xdxvn+iozihngw4e98M4W...
+Chave AES cifrada : zu+K3vVdQLqFwqFfllRv6yaaRkhwTVKA+cAGVWr0+X7PuFslPfdhuhR0ILoQ...
+Decifrado         : Pedido 4821: transferir R$ 100,00 para a conta de teste.
+
+=== 3. Teste de adulteracao do conteudo cifrado ===
+Adulteracao DETECTADA (InvalidTag do AES-GCM). Decifragem recusada.
+
+=== 4. Assinatura digital (autenticidade) ===
+Assinatura (base64): U81Ed/1FlD76e7HiuoNorcSPfvOqOSuHVU4n+zFK5tyJoHIgru0tD3MYGQG6...
+Mensagem original  -> assinatura valida? True
+Mensagem alterada  -> assinatura valida? False
+Chave publica errada -> assinatura valida? False
+
+=== 5. Sigilo x autenticidade ===
+Cifrar sem assinar: so o destinatario le, mas ninguem prova QUEM mandou.
+Assinar sem cifrar: todos leem, mas todos conferem QUEM mandou e se mudou.
+Aqui usamos os dois: cifra (sigilo) + assina (autenticidade).

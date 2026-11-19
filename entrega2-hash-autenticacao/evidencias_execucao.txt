@@ -1,0 +1,28 @@
+=== 1. Cadastro de usuarios (senhas de teste) ===
+Usuarios 'carlos' e 'ana' cadastrados com a MESMA senha.
+Cadastro recusado (senha curta (123)): A senha deve ter entre 8 e 128 caracteres.
+Cadastro recusado (usuario repetido): Usuario ja cadastrado.
+
+=== 2. O que fica gravado no banco (evidencia de registro protegido) ===
+id=1 usuario=carlos
+   algoritmo=scrypt N=131072 r=8 p=1
+   sal  =p34gm5pFI6j/UwyY5b3VeA==
+   hash =whlpw3kD/stqaQQ3ENqCzSJrT9f+C5UA7xP7eG6xoME=
+id=2 usuario=ana
+   algoritmo=scrypt N=131072 r=8 p=1
+   sal  =mS+Z5g9XA+umfLD2ca9SPA==
+   hash =SAn1Bg8BfN8I6+k81XTCO+BX4TYEonzRoaySNJARAiI=
+A senha em texto puro NAO aparece em nenhum campo.
+
+=== 3. Testes de login ===
+carlos + senha correta   -> True
+carlos + senha incorreta -> False
+usuario inexistente      -> False
+tentativa de SQL injection -> False
+
+=== 4. Por que SHA-256 isolado nao serve para senhas ===
+SHA-256 sem sal, usuario 1: 5030f6e099521d378f5750729d07baee60f0b87b531ce7c97b9d2478e8af70d1
+SHA-256 sem sal, usuario 2: 5030f6e099521d378f5750729d07baee60f0b87b531ce7c97b9d2478e8af70d1 <- IGUAL
+SHA-256: 200,000 tentativas em 0.09 s (~2,190,808 por segundo, em 1 nucleo)
+scrypt : 1 tentativa em 0.30 s (~3.3 por segundo, usando 128 MiB de memoria)
+Diferenca: o scrypt e cerca de 655,265 vezes mais lento para quem ataca.
